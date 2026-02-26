@@ -17,7 +17,16 @@ interface UsersTableProps {
   users: User[]
 }
 
-const formatDate = (apiDate: string): string => {
+const formatDate = (dateString: string): string => {
+  const date = new Date(dateString);
+  return date.toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  });
+};
+
+const formatDateTime = (apiDate: string): string => {
   const date = new Date(apiDate);
   return date.toLocaleString("en-US", {
     month: "short",
@@ -41,6 +50,7 @@ export default function UsersTable({ users }: UsersTableProps) {
     email: "",
     status: "",
     phone: "",
+    date: null as Date | null,
   });
 
   useEffect(() => {
@@ -64,6 +74,22 @@ export default function UsersTable({ users }: UsersTableProps) {
       if (
         filters.email &&
         !user.profile.email.toLowerCase().includes(filters.email.toLowerCase())
+      )
+        return false;
+
+       if (filters.date) {
+        const userDateStr = formatDateOnly(user.dateJoined);
+        const filterDateStr = filters.date.toLocaleDateString("en-US", {
+          month: "short",
+          day: "numeric",
+          year: "numeric",
+        });
+        if (userDateStr !== filterDateStr) return false;
+       }
+
+       if (
+        filters.phone &&
+        !user.profile.phoneNumber.includes(filters.phone)
       )
         return false;
 
@@ -115,7 +141,8 @@ export default function UsersTable({ users }: UsersTableProps) {
       username: "",
       email: "",
       status: "",
-      phone: ""
+      phone: "",
+      date: null,
     });
     setOpenFilter(false);
   };
@@ -123,8 +150,6 @@ export default function UsersTable({ users }: UsersTableProps) {
   function handleApply() {
     setOpenFilter(false);
   };
-
-  const [date, setDate] = useState<Date | null>(null)
 
 
   return (
@@ -198,7 +223,7 @@ export default function UsersTable({ users }: UsersTableProps) {
                 <td>{user.profile.fullName}</td>
                 <td>{user.profile.email}</td>
                 <td>{user.profile.phoneNumber}</td>
-                <td>{formatDate(user.dateJoined)}</td>
+                <td>{formatDateTime(user.dateJoined)}</td>
                 <td>
                   <span className={`${styles.status} ${styles[user.status.toLowerCase()]}`}>
                     {user.status.charAt(0).toUpperCase() + user.status.slice(1)}
@@ -284,8 +309,11 @@ export default function UsersTable({ users }: UsersTableProps) {
               <label htmlFor="date">Date</label>
               <div style={{position: "relative"}}>
                 <DatePicker
-                  selected={date}
-                  onChange={(date: Date | null) => setDate(date)}
+                  selected={filters.date}
+                  onChange={(date: Date | null) => setFilters({...filters, date})}
+                  dateFormat="MMM d, yyyy"
+                  placeholderText="Jan 23, 2023"
+                  isClearable
                   customInput={
                     <input
                       id="date"
