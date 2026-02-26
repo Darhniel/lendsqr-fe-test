@@ -67,8 +67,10 @@
       border: solid 1px #213F7D;
     }
   }
+}
 
-
+:global(.react-datepicker-wrapper) {
+  width: 100%
 }
 
 .filterButtons {

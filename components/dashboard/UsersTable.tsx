@@ -280,23 +280,25 @@ export default function UsersTable({ users }: UsersTableProps) {
                   setFilters({ ...filters, email: e.target.value })}
               />
             </div>
-            <div style={{ position: "relative" }}>
+            <div>
               <label htmlFor="date">Date</label>
-              <DatePicker
-                selected={date}
-                onChange={(date: Date | null) => setDate(date)}
-                customInput={
-                  <input
-                    id="date"
-                    placeholder="Date"
-                    readOnly
-                  />
-                }
-              />
+              <div style={{position: "relative"}}>
+                <DatePicker
+                  selected={date}
+                  onChange={(date: Date | null) => setDate(date)}
+                  customInput={
+                    <input
+                      id="date"
+                      placeholder="Date"
+                      readOnly
+                    />
+                  }
+                />
+                <label htmlFor="date" style={{ position: "absolute", right: "8px", top: "8px", cursor: "pointer " }}>
+                  <FaCalendarAlt size={20} />
+                </label>
+              </div>
 
-              <label htmlFor="date" style={{ position: "absolute", right: "8px", top: "28px", cursor: "pointer " }}>
-                <FaCalendarAlt size={20} />
-              </label>
             </div>
             <div>
               <label htmlFor="phone">Phone Number</label>
