@@ -78,7 +78,7 @@ export default function UsersTable({ users }: UsersTableProps) {
         return false;
 
        if (filters.date) {
-        const userDateStr = formatDateOnly(user.dateJoined);
+        const userDateStr = formatDate(user.dateJoined);
         const filterDateStr = filters.date.toLocaleDateString("en-US", {
           month: "short",
           day: "numeric",
