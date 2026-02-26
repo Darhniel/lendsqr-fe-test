@@ -83,6 +83,7 @@
   background: transparent;
   padding: 8px 14px;
   border-radius: 6px;
+  cursor: pointer;
 }
 
 .apply {
@@ -91,9 +92,9 @@
   padding: 8px 14px;
   border-radius: 6px;
   color: white;
+  cursor: pointer;
 }
 
-/* ACTION MENU */
 .actionsCell {
   position: relative;
 }
@@ -131,8 +132,6 @@
   }
 }
 
-
-/* STATUS COLORS */
 .status {
   padding: 6px 12px;
   border-radius: 20px;
