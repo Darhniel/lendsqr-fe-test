@@ -1,0 +1,28 @@
+.card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(33, 63, 125, 0.06);
+}
+
+.title {
+    font-size: 0.75rem;
+    margin-bottom: 10px;
+    color: #545f7d;
+}
+
+.h3 {
+    font-size: 1.25rem;
+    color: #213f7d;
+}
+
+.iconWrapper {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: #df18ff1a;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 14px;
+}

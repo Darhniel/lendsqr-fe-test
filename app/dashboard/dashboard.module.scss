@@ -1,0 +1,52 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #fbfbfb;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+}
+
+.content {
+  padding: 40px;
+  flex: 1;
+  margin-top: 5rem;
+  height: calc(100vh - 5rem);
+  overflow-y: scroll;
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 2.5rem;
+    color: #213f7d;
+    font-weight: 500;
+  }
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 26px;
+  margin-bottom: 2.5rem;
+}
+
+@media (max-width: 768px) {
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .content {
+    padding: 20px;
+    width: 100%;
+  }
+
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .main {
+    width: 100%;
+  }
+}

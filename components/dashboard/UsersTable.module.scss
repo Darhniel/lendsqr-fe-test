@@ -1,0 +1,158 @@
+.tableWrapper {
+  position: relative;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  min-width: 900px;
+  border-collapse: collapse;
+
+  th {
+    text-align: left;
+    font-size: 0.75rem;
+    padding-bottom: 0.75rem;
+    color: #545f7d;
+    position: relative;
+  }
+
+  td {
+    padding: 14px 0;
+    border-top: 1px solid #f0f0f0;
+    font-size: 14px;
+    color: #545f7d;
+  }
+}
+
+.filterIcon {
+  margin-left: 6px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.filterPopup {
+  position: absolute;
+  top: 60px;
+  left: 20px;
+  width: 270px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+
+  label,
+  span {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    font-size: 14px;
+  }
+
+  input,
+  select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 1px solid #213F7D33;
+    border-radius: 0.5rem;
+    background: transparent;
+    font-family: 'Work Sans';
+    color: #213F7D;
+
+    &:focus {
+      border: solid 1px #213F7D;
+    }
+  }
+
+
+}
+
+.filterButtons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.reset {
+  border: 1px solid #545f7d;
+  background: transparent;
+  padding: 8px 14px;
+  border-radius: 6px;
+}
+
+.apply {
+  background: #39cdcc;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  color: white;
+}
+
+/* ACTION MENU */
+.actionsCell {
+  position: relative;
+}
+
+.menuTrigger {
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.actionMenu {
+  position: absolute;
+  right: 0;
+  top: 30px;
+  width: 160px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+  z-index: 100;
+
+  button {
+    width: 100%;
+    padding: 10px 16px;
+    text-align: left;
+    border: none;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    &:hover {
+      background: #f3fcfc;
+    }
+  }
+}
+
+
+/* STATUS COLORS */
+.status {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.active {
+  background: #39cd620f;
+  color: #39cd62;
+}
+
+.pending {
+  background: #e9b2001a;
+  color: #e9b200;
+}
+
+.blacklisted {
+  background: #e4033b1a;
+  color: #e4033b;
+}
+
+.inactive {
+  background: #545f7d0f;
+  color: #545f7d;
+}
