@@ -1,14 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react';
 import styles from './Pagination.module.scss';
-
-interface Props {
-    total: number
-    perPage: number
-    currentPage: number
-    onPageChange: (page: number) => void
-    onPerPageChange: (value: number) => void
-}
+import { Props } from '@/types/paginationProps'
 
 export default function Pagination({
     total,
