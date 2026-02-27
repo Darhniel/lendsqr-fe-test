@@ -1,12 +1,5 @@
 import styles from "./StatCard.module.scss";
-
-interface Props {
-    title: string;
-    value: string;
-    icon: React.ElementType;
-    color?: string;
-    size?: number;
-}
+import { Props } from "@/types/statCardProps"
 
 export default function StatCard({ title, value, icon: Icon, color="", size }: Props) {
     return (
