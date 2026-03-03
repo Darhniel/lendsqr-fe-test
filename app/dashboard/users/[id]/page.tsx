@@ -52,9 +52,6 @@ export default function UserDetailsPage() {
                 </div>
             </div>
 
-
-
-            {/* Summary Card */}
             <div className={styles.summaryCard}>
                 <div className={styles.userDetails}>
                     <div className={styles.profile}>
@@ -65,7 +62,9 @@ export default function UserDetailsPage() {
                             />
                         </div>
                         <div>
-                            <h2 className={styles.name}>{user.profile.fullName}</h2>
+                            <h2 className={styles.name}>
+                                {user.profile.fullName}
+                            </h2>
                             <p>{user.account.accountNumber}</p>
                         </div>
                     </div>
@@ -110,8 +109,6 @@ export default function UserDetailsPage() {
                 </div>
             </div>
 
-
-            {/* Details Sections */}
             <div className={styles.card}>
                 <Section title="Personal Information">
                     <Detail label="Full Name" value={user.profile.fullName} />
@@ -176,14 +173,6 @@ export default function UserDetailsPage() {
 
                 <hr className={styles.divider} />
 
-                {/* <Section title="Guarantors">
-                    {user.guarantors.map((guarantor, idx) => (
-                        <div key={idx} style={{ marginBottom: "1rem" }}>
-
-                        </div>
-                    ))}
-                </Section> */}
-
                 <div>
                     <h3 className={styles.sectionTitle}>
                         Guarantors
@@ -212,7 +201,6 @@ export default function UserDetailsPage() {
     )
 }
 
-/* Reusable Components */
 
 function Section({ title, children }: any) {
     return (

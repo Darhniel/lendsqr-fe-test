@@ -18,7 +18,6 @@ import { useSidebar } from "@/contexts/SidebarContextType";
 
 export default function Sidebar() {
     const { mobileOpen, closeMobile } = useSidebar();
-    console.log("mobileOpen:", mobileOpen);
 
     const handleLinkClick = () => {
         closeMobile();

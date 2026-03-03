@@ -2,7 +2,7 @@
 import styles from "./dashboard.module.scss";
 import Sidebar from "@/components/layout/Sidebar";
 import Navbar from "@/components/layout/Navbar";
-import {SidebarProvider} from "@/contexts/SidebarContextType";
+import { SidebarProvider } from "@/contexts/SidebarContextType";
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
     return (

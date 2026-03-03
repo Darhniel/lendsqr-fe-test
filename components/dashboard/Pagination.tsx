@@ -60,7 +60,6 @@ export default function Pagination({
 
     return (
         <div className={styles.wrapper}>
-            {/* Left */}
             <div className={styles.left}>
                 <span>Showing</span>
 
@@ -78,7 +77,6 @@ export default function Pagination({
                 <span>out of {total}</span>
             </div>
 
-            {/* Right */}
             <div className={styles.pagination}>
                 <button
                     disabled={currentPage === 1}
